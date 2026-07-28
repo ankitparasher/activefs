@@ -1,0 +1,59 @@
+{
+  "name": "@activefs/testing",
+  "version": "0.1.1",
+  "description": "ActiveFS memory trees, fixtures, and conformance helpers for tree implementations.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "keywords": [
+    "activefs",
+    "testing",
+    "conformance",
+    "source-api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankitparasher/activefs.git",
+    "directory": "packages/testing"
+  },
+  "homepage": "https://github.com/ankitparasher/activefs#readme",
+  "bugs": {
+    "url": "https://github.com/ankitparasher/activefs/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./conformance": {
+      "types": "./dist/conformance.d.ts",
+      "import": "./dist/conformance.js",
+      "require": "./dist/conformance.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/index.ts src/conformance.ts --format esm,cjs --dts --external vitest",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@activefs/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "vitest": ">=3"
+  },
+  "peerDependenciesMeta": {
+    "vitest": {
+      "optional": true
+    }
+  }
+}

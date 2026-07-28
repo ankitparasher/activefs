@@ -1,0 +1,46 @@
+{
+  "name": "@activefs/local",
+  "version": "0.1.1",
+  "description": "Local ActiveFS tree, export, cache, invalidation, and filesystem helper utilities.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "keywords": [
+    "activefs",
+    "filesystem",
+    "cache",
+    "export"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankitparasher/activefs.git",
+    "directory": "packages/local"
+  },
+  "homepage": "https://github.com/ankitparasher/activefs#readme",
+  "bugs": {
+    "url": "https://github.com/ankitparasher/activefs/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@activefs/core": "workspace:*"
+  }
+}

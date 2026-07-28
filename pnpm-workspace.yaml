@@ -1,0 +1,10 @@
+packages:
+  - "packages/*"
+  - "examples/*"
+overrides:
+  esbuild: 0.28.1
+  fast-uri: 3.1.4
+  postcss: 8.5.23
+  "@hono/node-server": 2.0.12
+allowBuilds:
+  esbuild: true

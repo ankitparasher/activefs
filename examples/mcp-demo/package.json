@@ -1,0 +1,15 @@
+{
+  "name": "@activefs/example-mcp-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@activefs/core": "workspace:*",
+    "@activefs/mcp": "workspace:*",
+    "@modelcontextprotocol/sdk": "1.29.0"
+  }
+}

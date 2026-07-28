@@ -1,0 +1,19 @@
+{
+  "name": "@activefs/example-server-authoritative-write-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@activefs/core": "workspace:*",
+    "@activefs/source-http": "workspace:*",
+    "@activefs/testing": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  }
+}

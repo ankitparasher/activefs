@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "noEmitOnError": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@activefs/config": ["packages/config/src/index.ts"],
+      "@activefs/core": ["packages/core/src/index.ts"],
+      "@activefs/testing": ["packages/testing/src/index.ts"],
+      "@activefs/testing/conformance": ["packages/testing/src/conformance.ts"],
+      "@activefs/cli": ["packages/cli/src/index.ts"],
+      "@activefs/local": ["packages/local/src/index.ts"],
+      "@activefs/mount": ["packages/mount/src/index.ts"],
+      "@activefs/source-http": ["packages/source-http/src/index.ts"],
+      "@activefs/source-http/fetch": ["packages/source-http/src/fetch.ts"],
+      "@activefs/mcp": ["packages/mcp/src/index.ts"]
+    }
+  }
+}

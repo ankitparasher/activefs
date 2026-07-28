@@ -1,0 +1,57 @@
+{
+  "name": "activefs-root",
+  "version": "0.1.1",
+  "private": true,
+  "description": "A programmable filesystem for live application data.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankitparasher/activefs.git"
+  },
+  "homepage": "https://github.com/ankitparasher/activefs#readme",
+  "bugs": {
+    "url": "https://github.com/ankitparasher/activefs/issues"
+  },
+  "scripts": {
+    "activefs": "node packages/activefs/dist/index.js",
+    "api:report": "node scripts/generate-api-report.mjs",
+    "api:report:check": "node scripts/generate-api-report.mjs --check",
+    "build": "pnpm -r --if-present build",
+    "conformance:source-api": "node scripts/source-api-conformance.mjs",
+    "smoke:source-http:fetch": "node scripts/source-http-fetch-smoke.mjs",
+    "docs:links": "node scripts/check-doc-links.mjs",
+    "format:check": "node scripts/check-workspace-style.mjs --format",
+    "lint": "node scripts/check-workspace-style.mjs",
+    "smoke:multi-remote:examples": "node scripts/multi-remote-example-smoke.mjs",
+    "smoke:mcp:stdio": "node scripts/mcp-stdio-smoke.mjs",
+    "smoke:mcp:http": "node scripts/mcp-http-smoke.mjs",
+    "smoke:mcp": "pnpm smoke:mcp:stdio && pnpm smoke:mcp:http",
+    "smoke:mount:writes": "node scripts/mounted-write-smoke.mjs",
+    "smoke:examples": "node scripts/example-smoke.mjs",
+    "smoke:readme-first": "node scripts/readme-first-15min-smoke.mjs",
+    "smoke:mount": "node scripts/rclone-webdav-smoke.mjs",
+    "smoke:mount:doctor": "node scripts/rclone-webdav-smoke.mjs --doctor",
+    "smoke:mount:http": "node scripts/rclone-webdav-smoke.mjs",
+    "smoke:mount:rclone": "node scripts/rclone-webdav-smoke.mjs --rclone-check",
+    "smoke:mount:real": "node scripts/rclone-webdav-smoke.mjs --mount-check",
+    "coverage": "vitest run --coverage",
+    "test": "vitest run",
+    "test:examples": "vitest run examples",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "activefs": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "@vitest/coverage-v8": "4.1.10",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vitest": "4.1.10"
+  }
+}

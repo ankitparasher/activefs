@@ -1,0 +1,4 @@
+interface:
+  display_name: "Use ActiveFS"
+  short_description: "Browse ActiveFS remotes safely and selectively"
+  default_prompt: "Use $use-activefs to inspect a configured remote and choose the safest access surface."

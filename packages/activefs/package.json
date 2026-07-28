@@ -1,0 +1,55 @@
+{
+  "name": "activefs",
+  "version": "0.1.1",
+  "description": "A programmable filesystem CLI for live application data, tools, and agents.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "keywords": [
+    "activefs",
+    "filesystem",
+    "programmable-filesystem",
+    "virtual-filesystem",
+    "live-data",
+    "application-data",
+    "remote-data",
+    "mcp",
+    "ai-agents",
+    "developer-tools"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankitparasher/activefs.git",
+    "directory": "packages/activefs"
+  },
+  "homepage": "https://github.com/ankitparasher/activefs#readme",
+  "bugs": {
+    "url": "https://github.com/ankitparasher/activefs/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "activefs": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@activefs/cli": "workspace:*"
+  }
+}

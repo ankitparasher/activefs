@@ -1,0 +1,14 @@
+{
+  "name": "@activefs/example-object-storage-tree",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --external @aws-sdk/client-s3",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@activefs/core": "workspace:*",
+    "@aws-sdk/client-s3": "^3.1075.0"
+  }
+}

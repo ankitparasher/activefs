@@ -1,0 +1,60 @@
+{
+  "name": "@activefs/mcp",
+  "version": "0.1.1",
+  "description": "MCP adapter for exposing ActiveFS remote trees as resources, tools, prompts, and subscriptions.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "keywords": [
+    "activefs",
+    "mcp",
+    "resources",
+    "virtual-filesystem",
+    "ai-agents"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankitparasher/activefs.git",
+    "directory": "packages/mcp"
+  },
+  "homepage": "https://github.com/ankitparasher/activefs#readme",
+  "bugs": {
+    "url": "https://github.com/ankitparasher/activefs/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "activefs-mcp": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./cli": {
+      "types": "./dist/cli.d.ts",
+      "import": "./dist/cli.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean && tsup src/cli.ts --format esm --dts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@activefs/config": "workspace:*",
+    "@activefs/core": "workspace:*",
+    "@activefs/source-http": "workspace:*",
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "zod": "4.4.3"
+  }
+}

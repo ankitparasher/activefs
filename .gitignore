@@ -1,0 +1,16 @@
+node_modules/
+.pnpm-store/
+dist/
+coverage/
+artifacts/
+.activefs/
+/mounted/
+/mounted-docs/
+/mounted-*/
+.DS_Store
+.obsidian/
+*.tsbuildinfo
+*.log
+*.zip
+*.docx
+*.pdf
